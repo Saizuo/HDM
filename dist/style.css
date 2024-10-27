@@ -417,7 +417,7 @@ body input:checked {
 
 #logo {
   position: fixed;
-  background: url("https://assets.codepen.io/383755/580b57fcd9996e24bc43c34d.png") 50% 50%/auto 40vh no-repeat, rgba(0, 0, 0, 0.75);
+  background: url("https://media.discordapp.net/attachments/1147887838495522978/1300083328543625286/HDM-10-27-2024.png?ex=671f8c73&is=671e3af3&hm=5087059a047fd0d353a00ebc63a50082acb0dc3c9c61da95551970424c714645&=&format=webp&quality=lossless&width=737&height=570") 50% 50%/auto 40vh no-repeat, rgba(0, 0, 0, 0.75);
   z-index: 10;
   width: 100vw;
   height: 100vh;

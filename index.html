@@ -15,15 +15,44 @@
             padding: 0;
             box-sizing: border-box;
             font-family: "PixelSquare", monospace;
-            text-shadow: 
-                -10px -10px 0 #22252C,  
-                10px -10px 0 #22252C,
-                -10px 10px 0 #22252C,
-                10px 10px 0 #22252C,
-                -10px 0 0 #22252C,
-                10px 0 0 #22252C,
-                0 -10px 0 #22252C,
-                0 10px 0 #22252C;
+        }
+
+        .outlined-text {
+            position: relative;
+            display: inline-block;
+        }
+
+        .outlined-text::before,
+        .outlined-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-text-stroke: 10px #22252C;
+            text-stroke: 10px #22252C;
+            paint-order: stroke fill;
+        }
+
+        .outlined-text::before {
+            -webkit-text-stroke: 20px #22252C;
+            text-stroke: 20px #22252C;
+            z-index: -2;
+        }
+
+        .outlined-text::after {
+            -webkit-text-stroke: 10px #22252C;
+            text-stroke: 10px #22252C;
+            z-index: -1;
+        }
+
+        h1, a, div, span, p {
+            -webkit-text-stroke: 10px #22252C;
+            text-stroke: 10px #22252C;
+            -webkit-text-fill-color: white;
+            text-fill-color: white;
+            paint-order: stroke fill;
         }
 
         html, body {
@@ -49,32 +78,36 @@
             letter-spacing: 1px;
         }
 
-        .header {
+        .header-container {
             background-color: #b8860b;
-            padding: 10px;
+            width: 100%;
+        }
+
+        .header {
+            padding: 20px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 80px;
+            height: 120px;
             width: 100%;
         }
 
         .title-container {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 30px;
         }
 
         .skull {
-            width: 48px;
-            height: 48px;
+            width: 84px;
+            height: 84px;
             image-rendering: pixelated;
         }
 
         .title {
-            font-size: 3.5vw;
-            letter-spacing: 2px;
+            font-size: 4.5vw;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: white;
             font-weight: normal;
@@ -84,12 +117,14 @@
             background-color: #1a1a1a;
             color: white;
             text-align: center;
-            padding: 8px;
+            padding: 12px;
             font-size: 1vw;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             width: 100%;
+            position: relative;
         }
 
+        /* Rest of the CSS remains the same */
         .content {
             background-image: url('/holydarkbg.png');
             background-size: cover;
@@ -101,7 +136,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 22px;
             background-color: #b8860b;
             width: 100%;
             height: 100vh;
@@ -146,10 +181,14 @@
             border: none;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .title {
-                font-size: 5vw;
+                font-size: 6vw;
+            }
+
+            .skull {
+                width: 64px;
+                height: 64px;
             }
 
             .meme-text {
@@ -180,18 +219,19 @@
         <a href="#">Twitter</a>
     </nav>
 
-    <header class="header">
-        <div class="title-container">
-            <img src="navskullleft.png" alt="Left Skull" class="skull" />
+    <div class="header-container">
+        <header class="header">
+            <div class="title-container">
+            <img src="navskullleft.png" alt="Left Skull" class="skull" style="width: 100px; height: 100px;" />
             <h1 class="title">Holy Dark Memes</h1>
-            <img src="navskullright.png" alt="Right Skull" class="skull" />
-        </div>
-    </header>
-
-    <div class="subtitle">JOIN THE FUN B#TCH</div>
+            <img src="navskullright.png" alt="Right Skull" class="skull" style="width: 100px; height: 100px;" />
+            </div>
+        </header>
+        <div class="subtitle">JOIN THE FUN B#TCH</div>
+    </div>
 
     <div class="content stats">
-        <img src="/holydarkskull.png" alt="Center Skull" class="center-skull" />
+        <img src="/holydarkskull.png" alt="Center Skull" class="center-skull" style="width: 400px; height: 340px;" />
         <div class="meme-text">
             When you realize<br />
             you're a meme

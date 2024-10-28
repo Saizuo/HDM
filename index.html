@@ -1,253 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Holy Dark Memes</title>
     <style>
-        @font-face {
-            font-family: "PixelSquare";
-            src: url("/Pixel Square Bold10.ttf") format("truetype");
-        }
+      @font-face {
+        font-family: "PixelSquare";
+        src: url("/Pixel Square Bold10.ttf") format("truetype");
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "PixelSquare", monospace;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "PixelSquare", monospace;
+      }
 
-        .outlined-text {
-            position: relative;
-            display: inline-block;
-        }
+      .outlined-text {
+        position: relative;
+        display: inline-block;
+      }
 
-        .outlined-text::before,
-        .outlined-text::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            -webkit-text-stroke: 10px #22252C;
-            text-stroke: 10px #22252C;
-            paint-order: stroke fill;
-        }
+      .outlined-text::before,
+      .outlined-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-text-stroke: 10px #22252c;
+        text-stroke: 10px #22252c;
+        paint-order: stroke fill;
+      }
 
-        .outlined-text::before {
-            -webkit-text-stroke: 20px #22252C;
-            text-stroke: 20px #22252C;
-            z-index: -2;
-        }
+      .outlined-text::before {
+        -webkit-text-stroke: 20px #22252c;
+        text-stroke: 20px #22252c;
+        z-index: -2;
+      }
 
-        .outlined-text::after {
-            -webkit-text-stroke: 10px #22252C;
-            text-stroke: 10px #22252C;
-            z-index: -1;
-        }
+      .outlined-text::after {
+        -webkit-text-stroke: 10px #22252c;
+        text-stroke: 10px #22252c;
+        z-index: -1;
+      }
 
-        h1, a, div, span, p {
-            -webkit-text-stroke: 10px #22252C;
-            text-stroke: 10px #22252C;
-            -webkit-text-fill-color: white;
-            text-fill-color: white;
-            paint-order: stroke fill;
-        }
+      h1,
+      a,
+      div,
+      span,
+      p {
+        -webkit-text-stroke: 10px #22252c;
+        text-stroke: 10px #22252c;
+        -webkit-text-fill-color: white;
+        text-fill-color: white;
+        paint-order: stroke fill;
+      }
 
-        html, body {
-            background-color: #000;
-            color: white;
-            line-height: 1;
-        }
+      html,
+      body {
+        background-color: #000;
+        color: white;
+        line-height: 1;
+      }
 
-        .nav {
-            background-color: #1a1a1a;
-            padding: 8px;
-            display: flex;
-            gap: 30px;
-            padding-left: 20px;
-            width: 100%;
-        }
+      .nav {
+        background-color: #1a1a1a;
+        padding: 8px;
+        display: flex;
+        gap: 30px;
+        padding-left: 20px;
+        width: 100%;
+      }
 
-        .nav a {
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 18px;
-            letter-spacing: 1px;
-        }
+      .nav a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
 
-        .header-container {
-            background-color: #b8860b;
-            width: 100%;
-        }
+      .header-container {
+        background-color: #b8860b;
+        width: 100%;
+      }
 
-        .header {
-            padding: 20px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 120px;
-            width: 100%;
-        }
+      .header {
+        padding: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        width: 100%;
+      }
 
-        .title-container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
+      .title-container {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
 
-        .skull {
-            width: 84px;
-            height: 84px;
-            image-rendering: pixelated;
-        }
+      .skull {
+        width: 84px;
+        height: 84px;
+        image-rendering: pixelated;
+      }
 
-        .title {
-            font-size: 4.5vw;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: white;
-            font-weight: normal;
-        }
+      .title {
+        font-size: 4.5vw;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: white;
+        font-weight: normal;
+      }
 
-        .subtitle {
-            background-color: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            font-size: 1vw;
-            letter-spacing: 4px;
-            width: 100%;
-            position: relative;
-        }
+      .subtitle {
+        background-color: #1a1a1a;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 1vw;
+        letter-spacing: 4px;
+        width: 100%;
+        position: relative;
+      }
 
-        /* Rest of the CSS remains the same */
-        .content {
-            background-image: url('/holydarkbg.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            image-rendering: pixelated;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 22px;
-            background-color: #b8860b;
-            width: 100%;
-            height: 100vh;
-        }
+      /* Rest of the CSS remains the same */
+      .content {
+        background-image: url("/holydarkbg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        image-rendering: pixelated;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 22px;
+        background-color: #b8860b;
+        width: 100%;
+        height: 100vh;
+      }
 
-        .center-skull {
-            width: 260px;
-            height: 210px;
-            image-rendering: pixelated;
-            margin-bottom: 20px;
-        }
+      .center-skull {
+        width: 260px;
+        height: 210px;
+        image-rendering: pixelated;
+        margin-bottom: 20px;
+      }
 
-        .meme-text {
-            color: white;
-            font-size: 2vw;
-            text-align: center;
-            margin: 20px 0;
-            line-height: 1.5;
-            letter-spacing: 1px;
-        }
+      .meme-text {
+        color: white;
+        font-size: 2vw;
+        text-align: center;
+        margin: 20px 0;
+        line-height: 1.5;
+        letter-spacing: 1px;
+      }
 
-        .stats {
-            display: flex;
-            gap: 60px;
-            color: white;
-            font-size: 3.5vw;
-            margin-top: auto;
-            letter-spacing: 1px;
-            padding-top: 20px;
-            flex-wrap: wrap;
-        }
+      .stats {
+        display: flex;
+        gap: 60px;
+        color: white;
+        font-size: 3.5vw;
+        margin-top: auto;
+        letter-spacing: 1px;
+        padding-top: 20px;
+        flex-wrap: wrap;
+      }
 
-        .iframe-container {
-            width: 100%;
-            height: 100vh;
-            display: block;
-        }
+      .iframe-container {
+        width: 100%;
+        height: 100vh;
+        display: block;
+      }
 
-        .iframe-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+      .iframe-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
 
-        @media (max-width: 768px) {
-            .title {
-                font-size: 6vw;
-            }
+      @media (max-width: 768px) {
+    .title {
+        font-size: 6vw;
+    }
 
-            .skull {
-                width: 64px;
-                height: 64px;
-            }
+    .skull {
+        width: 64px;
+        height: 64px;
+    }
 
-            .meme-text {
-                font-size: 4vw;
-            }
+    .center-skull {
+        width: 80%;
+        height: auto;
+        max-width: 260px;
+    }
 
-            .stats {
-                font-size: 3vw;
-                gap: 20px;
-                flex-direction: column;
-                align-items: center;
-            }
+    .meme-text {
+        font-size: 4vw;
+    }
 
-            .nav a {
-                font-size: 12px;
-            }
+    .stats {
+        font-size: 3vw;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .content {
-                min-height: 100vh;
-            }
-        }
+    .nav a {
+        font-size: 12px;
+    }
+
+    .content {
+        min-height: 100vh;
+        padding: 10px;
+    }
+
+    /* Adjust the "How to Buy" section */
+    .iframe-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header .title-container {
+        flex-direction: column;
+    }
+
+    /* Buy blocks adjustments */
+    .buy-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .buy-section a div {
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+    }
+}
+
+      
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="nav">
-        <a href="#">Telegram</a>
-        <a href="#">Pump.fun</a>
-        <a href="#">Twitter</a>
+      <a href="#">Telegram</a>
+      <a href="#">Pump.fun</a>
+      <a href="#">Twitter</a>
     </nav>
 
     <div class="header-container">
-        <header class="header">
-            <div class="title-container">
-            <img src="navskullleft.png" alt="Left Skull" class="skull" style="width: 100px; height: 100px;" />
-            <h1 class="title">Holy Dark Memes</h1>
-            <img src="navskullright.png" alt="Right Skull" class="skull" style="width: 100px; height: 100px;" />
-            </div>
-        </header>
-        <div class="subtitle">JOIN THE FUN B#TCH</div>
+      <header class="header">
+        <div class="title-container">
+          <img
+            src="navskullleft.png"
+            alt="Left Skull"
+            class="skull"
+            style="width: 100px; height: 100px"
+          />
+          <h1 class="title">Holy Dark Memes</h1>
+          <img
+            src="navskullright.png"
+            alt="Right Skull"
+            class="skull"
+            style="width: 100px; height: 100px"
+          />
+        </div>
+      </header>
+      <div class="subtitle">JOIN THE FUN B#TCH</div>
     </div>
 
     <div class="content stats">
-        <img src="/holydarkskull.png" alt="Center Skull" class="center-skull" style="width: 400px; height: 340px;" />
-        <div class="meme-text">
-            When you realize<br />
-            you're a meme
-        </div>
-        <div class="">
-            <span style="font-size: 1.5vw; margin-right: 40px;">10,442 members</span>
-            <span style="font-size: 1.5vw;">145,234 memes</span>
-        </div>
+      <img
+        src="/holydarkskull.png"
+        alt="Center Skull"
+        class="center-skull"
+        style="width: 400px; height: 340px"
+      />
+      <div class="meme-text">
+        When you realize<br />
+        you're a meme
+      </div>
+      <div class="">
+        <span style="font-size: 1.5vw; margin-right: 40px">10,442 members</span>
+        <span style="font-size: 1.5vw">145,234 memes</span>
+      </div>
+    </div>
+    <div
+      class=""
+      style="
+        background-color: #1a1a1a;
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        text-align: center;
+        width: 100%;
+      "
+    >
+      <span style="font-size: 1.5vw; text-align: center">Scroll To Play</span>
     </div>
     <div class="iframe-container">
-        <iframe src="dist/index.html"></iframe>
+      <iframe src="dist/index.html"></iframe>
     </div>
-    <footer style="text-align: center; background-color: #1a1a1a;
-    padding: 8px;
-    gap: 20px;
-    padding-left: 20px;
-    width: 100%;">made by retard</footer>
-</body>
+   <section> <div
+      class=""
+      style="
+        background-color: #1a1a1a;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        text-align: center;
+        width: 100%;
+      "
+    >
+      <span style="font-size: 2.5vw; text-align: center"
+        >HOW TO BUY Sh#t</span
+      >
+    </div>
+    <div
+    style="
+      display: flex;
+      gap: 50px;
+      margin: 0 auto;
+      background-color: #b8860b;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    "
+  >
+    <!-- First Block -->
+    <a href="https://example.com/buy" style="text-decoration: none; display: block;">
+      <div
+        style="
+          width: 200px;
+          height: 200px;
+          background-size: cover;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          background-image: url('buyskull.png');
+        "
+      >
+        <div
+          style="
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+          "
+        >
+          BUY
+        </div>
+      </div>
+    </a>
+  
+    <!-- Second Block -->
+    <a href="https://example.com/buy-more" style="text-decoration: none; display: block;">
+      <div
+        style="
+          width: 200px;
+          height: 200px;
+          background-image: url('buyskullmiddle.png');
+          background-size: cover;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        "
+      >
+        <div
+          style="
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+          "
+        >
+          BUY MORE
+        </div>
+      </div>
+    </a>
+  
+    <!-- Third Block -->
+    <a href="https://example.com/lfg" style="text-decoration: none; display: block;">
+      <div
+        style="
+          width: 200px;
+          height: 200px;
+          background-image: url('buyskull.png');
+          background-size: cover;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        "
+      >
+        <div
+          style="
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+          "
+        >
+          LFGGG
+        </div>
+      </div>
+    </a>
+  </div>
+  
+
+<!-- Footer Note -->
+<div
+  style="
+    
+    
+    background-color: #1a1a1a;
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+  "
+>
+  Mind note: if you try to bot this, I will fucking find you
+</div>
+</section>
+    <footer
+      style="
+        text-align: center;
+        background-color: #1a1a1a;
+        padding: 8px;
+        gap: 20px;
+        padding-left: 20px;
+        width: 100%;
+      "
+    >
+      made by retard
+    </footer>
+  </body>
 </html>
